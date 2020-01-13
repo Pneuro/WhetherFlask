@@ -1,7 +1,20 @@
 from flask import Flask, render_template, url_for
 from flask_sqlalchemy import SQLAlchemy
 from datetime import datetime
+# import soundcloud
 
+
+#####################################################################################
+############################# SoundCloud ############################################
+#####################################################################################
+
+
+# client = soundcloud.Client(client_id='dylan-kendrick-183112710')
+# track_url = 'https://soundcloud.com/forss/flickermood'
+# embed_info = client.get('/oembed', url=track_url)
+
+# # print the html for the player widget
+# print(embed_info['html'])
 
 app = Flask(__name__)
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///test.db'

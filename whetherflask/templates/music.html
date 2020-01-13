@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+
+{% block head %}
+<title>Resume</title>
+{% endblock %}
+
+{% block body %}
+
+
+<div class="d-flex flex-column">
+    <div class="p-2">Silent Hearts</div>
+    <div class="p-2">Flex item 2</div>
+    <div class="p-2">Flex item 3</div>
+</div>
+
+<!-- responsive variations -->
+<div class="d-flex flex-sm-column">
+    <div class="row">
+        <div class="col-sm-8">
+            <h4>Silent Hearts</h4>
+            <p>My passion for software engineering is fierce, though it is not my first love. I've taken the time to
+                understand,
+                respect, and maintain an understanding of the musical frameworks of theory, the industry, audio
+                engineering
+                and
+                music production. Performed on hundreds of stages and entertained thousands of people. </p>
+        </div>
+    </div>
+    <div class="container col-sm-8" id="stranger">
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/JgvqIDfSG2E" frameborder="0"
+            allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    </div>
+</div>
+</div>
+<div class="d-flex flex-md-column">...</div>
+<div class="d-flex flex-lg-column">...</div>
+<div class="d-flex flex-xl-column">...</div>
+
+{% endblock %}

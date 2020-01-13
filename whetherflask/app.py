@@ -36,5 +36,20 @@ def index():
     return render_template('index.html')
 
 
+@app.route('/softeng')
+def softeng():
+    return render_template('softeng.html', title='Software Engineering')
+
+
+@app.route('/Music')
+def music():
+    return render_template('music.html', title='Music')
+
+
+@app.route('/Contact')
+def contact():
+    return render_template('contact.html', title='Contact')
+
+
 if __name__ == "__main__":
     app.run(debug=True)

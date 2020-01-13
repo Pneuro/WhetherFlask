@@ -1,13 +1,9 @@
 body {
-    /* margin: 0;
-    background-color: #3A435E;
-    color: aquamarine;
-    background-image: url('NorwalkRes.png');
-    background-color: #313e50;
+    background-color: #E04700;
     background-size: auto;
     background-position: top left;
-    -webkit-animation: mymove 5s infinite; /* Safari 4.0 - 8.0 */
-    animation: mymove 5s infinite; */
+    -webkit-animation: mymove 5s infinite; /* Safari 4.0 - 8.0*/
+    animation: mymove 5s infinite; 
 }
 .mybody {
     text-align: center;
@@ -17,13 +13,10 @@ body {
     background-color: #3A435E;
 }
 
-
-.mycontainer {
-    background-image: url('NorwalkRes.png');
-}
-.music {
+#nav {
     background-color: #E04700;
 }
+
 
 #myfooter {
     position: absolute;

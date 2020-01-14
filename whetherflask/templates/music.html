@@ -5,69 +5,75 @@
 {% endblock %}
 
 {% block body %}
+<div class="container">
+    <div id="accordion" role="tablist">
+        <div class="card bg-dark text-white">
+            <div class="card-header" role="tab" id="headingOne">
+                <h5 class="mb-0">
+                    <a data-toggle="collapse" href="#collapseOne" aria-expanded="false" aria-controls="collapseOne"
+                        class="collapsed text-white">
+                        Silent Hearts
+                    </a>
+                </h5>
+            </div>
 
-<div id="accordion" role="tablist">
-    <div class="card bg-dark text-white">
-        <div class="card-header" role="tab" id="headingOne">
-            <h5 class="mb-0">
-                <a data-toggle="collapse" href="#collapseOne" aria-expanded="false" aria-controls="collapseOne"
-                    class="collapsed">
-                    Silent Hearts
-                </a>
-            </h5>
+            <div id="collapseOne" class="collapse" role="tabpanel" aria-labelledby="headingOne">
+                <div class="card-body">
+                    <div class="d-flex flex-sm-column collapse">
+                        <div class="row">
+                            <div class="col-sm-8 ">
+                                <h4 class="text-center">Silent Hearts</h4>
+                                <p>My passion for software engineering is fierce, though it is not my first love. I've
+                                    taken
+                                    the time to
+                                    understand,
+                                    respect, and maintain an understanding of the musical frameworks of theory, the
+                                    industry, audio
+                                    engineering
+                                    and
+                                    music production. Performed on hundreds of stages and entertained thousands of
+                                    people.
+                                </p>
+                            </div>
+                        </div>
+                        <div class="container col-sm-8" id="stranger">
+                            <iframe width="560" height="315" src="https://www.youtube.com/embed/JgvqIDfSG2E"
+                                frameborder="0"
+                                allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+                                allowfullscreen></iframe>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
         </div>
-
-        <div id="collapseOne" class="collapse" role="tabpanel" aria-labelledby="headingOne" style="">
-            <div class="card-body">
-                <div class="d-flex flex-sm-column collapse">
+        <div class="card bg-dark text-white">
+            <div class="card-header" role="tab" id="headingTwo">
+                <h5 class="mb-0">
+                    <a class="collapsed text-white" data-toggle="collapse" href="#collapseTwo" aria-expanded="false"
+                        aria-controls="collapseTwo">
+                        Dylan Kendrick Music
+                    </a>
+                </h5>
+            </div>
+            <div id="collapseTwo" class="collapse" role="tabpanel" aria-labelledby="headingTwo" style="">
+                <div class="card-body">
                     <div class="row">
                         <div class="col-sm-8">
-                            <h4>Silent Hearts</h4>
-                            <p>My passion for software engineering is fierce, though it is not my first love. I've taken
-                                the time to
-                                understand,
-                                respect, and maintain an understanding of the musical frameworks of theory, the
-                                industry, audio
-                                engineering
-                                and
-                                music production. Performed on hundreds of stages and entertained thousands of people.
-                            </p>
+                            <div class="container">
+
+                                <iframe width="40%" height="300" scrolling="no" frameborder="no" allow="autoplay"
+                                    src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/722897275%3Fsecret_token%3Ds-lcehc&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true"></iframe>
+                            </div>
                         </div>
-                    </div>
-                    <div class="container col-sm-8" id="stranger">
-                        <iframe width="560" height="315" src="https://www.youtube.com/embed/JgvqIDfSG2E" frameborder="0"
-                            allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-                            allowfullscreen></iframe>
-                    </div>
-                </div>
-
-            </div>
-        </div>
-    </div>
-    <div class="card bg-dark text-white">
-        <div class="card-header" role="tab" id="headingTwo">
-            <h5 class="mb-0">
-                <a class="collapsed " data-toggle="collapse" href="#collapseTwo" aria-expanded="false"
-                    aria-controls="collapseTwo">
-                    Dylan Kendrick Music
-                </a>
-            </h5>
-        </div>
-        <div id="collapseTwo" class="collapse" role="tabpanel" aria-labelledby="headingTwo" style="">
-            <div class="card-body">
-                <div class="row">
-                    <div class="col-sm-8">
-                        <div class="container">
-
-                            <iframe width="40%" height="300" scrolling="no" frameborder="no" allow="autoplay"
-                                src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/722897275%3Fsecret_token%3Ds-lcehc&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true"></iframe>
+                        <div>
+                            <p> this is where an instagram embed should go.</p>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-</div>
 </div>
 
 {% endblock %}

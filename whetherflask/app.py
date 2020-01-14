@@ -3,24 +3,39 @@ from flask_sqlalchemy import SQLAlchemy
 from datetime import datetime
 
 app = Flask(__name__)
-app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///test.db'
+app.config['SQLALCHEMY_DATABASE_URI'] = 'c822c2bd2a140e8ea1da0d5c5246b990'
 db = SQLAlchemy(app)
-
-
-class Todo(db.Model):
-    id = db.Column(db.Integer, primary_key=True)
-    # set to false so it cant be left blank
-    content = db.Column(db.String(200), nullable=False)
-    date_created = db.Column(db.DateTime, default=datetime.utcnow)
-
-    def __repr__(self):
-        return '<Task %r>' % self.id
+posts = [{
+    'id': 'post_1',
+    'author': 'Sammie Kendrick',
+    'email': 'thedylankendrick@gmail.com',
+    'content': 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint dolores expedita odit, vero doloremque aspernatur qui quibusdam non, perferendis magni saepe cum. Consequuntur magni soluta repudiandae iure facilis rem officia.'
+},
+    {
+    'id': 'post_2',
+    'author': 'Silent Hearts',
+    'email': 'thedylankendrick@gmail.com',
+    'content': 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint dolores expedita odit, vero doloremque aspernatur qui quibusdam non, perferendis magni saepe cum. Consequuntur magni soluta repudiandae iure facilis rem officia.'
+}
+]
 
 
 @app.route('/')
 @app.route('/home')
 def index():
-    return render_template('about.html')
+    return render_template('about.html', posts=posts)
+
+
+@app.route('/register')
+def register():
+    form = RegistrationForm()
+    return render_template('register.html', title='Register', form=form)
+
+
+@app.route('/login')
+def login():
+    form = LoginForm()
+    return render_template('login.html', title='Login', form=form)
 
 
 @app.route('/softeng')

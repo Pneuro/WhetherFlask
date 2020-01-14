@@ -52,13 +52,19 @@
                 </p>
 
             </div>
+
+
+            <br>
+            <hr>
+            <br>
         </div>
-
-        <br>
-        <hr>
-        <br>
-
+        <div>
+            <content> {% for post in posts %}
+                {% print(post) %}
+                {% endfor %}</content>
+        </div>
     </div>
+</div>
 </div>
 </div>
 {% endblock %}

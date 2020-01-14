@@ -28,6 +28,10 @@
                     <a class="nav-item nav-link" href="{{ url_for('contact') }}">Contact</a>
                 </div>
             </div>
+            <div class='navbar-nav'>
+                <a class="nav-item nav-link" href="/login">Login</a>
+                <a class="nav-item nav-link" href="/register">Register</a>
+            </div>
     </nav>
     <div class="jumbotron text-center"
         style="background-image: url(static/css/pib_sunset_crop.png); background-size: 120%; background-position: center; padding: 150px;">
@@ -36,16 +40,25 @@
             <hr>
             <br>
             <h1>Sammie Kendrick</h1>
-            <p>Resumé built with Flask, the Python framework.</p>
+            <p>Built with Flask, the Python framework. </p>
             <br>
             <hr>
             <br>
         </div>
     </div>
     <div class="">
-        {% block body %} {% endblock %}
+        {% with messages = get_flashed_messages(with_categories=true) %}
+        {% if messages %}
+        {% for category, message in messages %}
+        <div class='alert alert-{{ category }}'>
+            {{ message }}
+        </div>
+        {% endfor %}
+        {% endif %}
+        {% endwith %}
+        {% block body %}
+        {% endblock %}
     </div>
-
     <div class="myfooter mybody sticky-top">
         <footer>
             <div>

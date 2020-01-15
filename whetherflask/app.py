@@ -8,7 +8,7 @@ from pymongo import MongoClient
 
 app = Flask(__name__)
 cluster = MongoClient(
-    'mongodb+srv://pneuro:0icu8122@koncept-database-etudy.gcp.mongodb.net/test')
+    'mongodb+srv://pneuro:#####password#####@koncept-database-etudy.gcp.mongodb.net/test')
 db = cluster["data"]
 collection = db["data"]
 

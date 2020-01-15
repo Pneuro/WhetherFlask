@@ -2,23 +2,23 @@ from flask import Flask, render_template, url_for, flash, redirect
 from flask_sqlalchemy import SQLAlchemy
 from datetime import datetime
 from forms import RegistrationForm, LoginForm
-from flask_pymongo import Pymongo
+import pymongo
+from pymongo import MongoClient
+
+
 app = Flask(__name__)
-app.config['MONGO_URI'] = 'mongodb+srv://pneuro:0icu8122>@koncept-database-etudy.gcp.mongodb.net/test'
-db = SQLAlchemy(app)
+cluster = MongoClient(
+    'mongodb+srv://pneuro:0icu8122@koncept-database-etudy.gcp.mongodb.net/test')
+db = cluster["data"]
+collection = db["data"]
+
+
 posts = [{
-    'id': 'post_1',
-    'author': 'Sammie Kendrick',
-    'email': 'thedylankendrick@gmail.com',
-    'content': 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint dolores expedita odit, vero doloremque aspernatur qui quibusdam non, perferendis magni saepe cum. Consequuntur magni soluta repudiandae iure facilis rem officia.'
-},
-    {
-    'id': 'post_2',
-    'author': 'Silent Hearts',
-    'email': 'thedylankendrick@gmail.com',
-    'content': 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint dolores expedita odit, vero doloremque aspernatur qui quibusdam non, perferendis magni saepe cum. Consequuntur magni soluta repudiandae iure facilis rem officia.'
+    "_id": 0, 'title': 'post_1', 'author': 'Sammie Kendrick', 'email': 'thedylankendrick@gmail.com',
 }
 ]
+
+results = collection.find({})
 
 
 @app.route('/')
@@ -50,7 +50,7 @@ def login():
 
 @app.route('/softeng')
 def softeng():
-    return render_template('softeng.html', title='Software Engineering')
+    return render_template('softeng.html', title='Software Engineering', results=results)
 
 
 @app.route('/Music')

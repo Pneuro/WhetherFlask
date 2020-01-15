@@ -4,20 +4,36 @@ from datetime import datetime
 from forms import RegistrationForm, LoginForm
 import pymongo
 from pymongo import MongoClient
-
+import os
 
 app = Flask(__name__)
 cluster = MongoClient(
-    'mongodb+srv://pneuro:#####password#####@koncept-database-etudy.gcp.mongodb.net/test')
+    'mongodb+srv://pneuro:0icu8122@koncept-database-etudy.gcp.mongodb.net/test')
 db = cluster["data"]
 collection = db["data"]
 
+####################################### Secret Key ##########################################
+app.config.update(
+
+    # Set the secret key to a sufficiently random value
+    SECRET_KEY=os.urandom(24),
+
+    # Set the session cookie to be secure
+    SESSION_COOKIE_SECURE=True,
+
+    # Set the session cookie for our app to a unique name
+    SESSION_COOKIE_NAME='Portfolio-WebSession',
+
+    # Set CSRF tokens to be valid for the duration of the session. This assumes you’re using WTF-CSRF protection
+    WTF_CSRF_TIME_LIMIT=None
+
+)
 
 posts = [{
     "_id": 0, 'title': 'post_1', 'author': 'Sammie Kendrick', 'email': 'thedylankendrick@gmail.com',
 }
 ]
-
+varia = 'Ble'
 results = collection.find({})
 
 
@@ -50,7 +66,7 @@ def login():
 
 @app.route('/softeng')
 def softeng():
-    return render_template('softeng.html', title='Software Engineering', results=results)
+    return render_template('softeng.html', title='Software Engineering', results=results, varia=varia)
 
 
 @app.route('/Music')

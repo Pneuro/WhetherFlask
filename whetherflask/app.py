@@ -33,8 +33,6 @@ posts = [{
     "_id": 0, 'title': 'post_1', 'author': 'Sammie Kendrick', 'email': 'thedylankendrick@gmail.com',
 }
 ]
-varia = 'Ble'
-results = collection.find({})
 
 
 @app.route('/')
@@ -66,7 +64,7 @@ def login():
 
 @app.route('/softeng')
 def softeng():
-    return render_template('softeng.html', title='Software Engineering', results=results, varia=varia)
+    return render_template('softeng.html', title='Software Engineering')
 
 
 @app.route('/Music')

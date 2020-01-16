@@ -24,6 +24,13 @@ html, body {
 .scheme {
     background-color: #0D1317;
 }
+#overlay {
+    text-shadow: 1px 1px 1px black,
+             1px 1px 1px black;
+}
+#overlaywhite {
+
+}
 #stranger {
     padding: 5px;
     

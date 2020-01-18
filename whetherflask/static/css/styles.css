@@ -38,6 +38,7 @@ html, body {
 .myfooter {
     margin-top: 100px;
     padding-top: 2em;
+    padding-bottom: 2em;
     bottom: 0;
     width: 100%;
     height: 50px;

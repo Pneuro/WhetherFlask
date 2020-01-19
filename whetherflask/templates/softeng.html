@@ -6,14 +6,14 @@
 
 {% block body %}
 
-<div class="container ">
+<div class="container animated rotateInUpRight">
     <div class="row">
         <div class="col-sm-8 " style="width: 18rem; font-family: 'Courier New', 'Courier', 'monospace'">
             <h2>Software Engineering </h2>
             <div>
                 <p> The beginning of programming was in November of 2019. I've had a strong passion for not only
                     computers, but learning and problem solving. With this fundamental drive, I've chosen to learn the
-                    Python programming language. <br>
+                    Python programming language first. <br>
                     Tasks I've given myself. <ul>
                         <li><strong>Web Scraper (BeautifulSoup4</strong>)</li>
                         <li>Weather Application with login verification. Utilizing the <strong>Dark Sky API</strong>,
@@ -37,11 +37,45 @@
                     Birthdate: 12/22/1986<br>
                     Cognitive Functions: Ti>Ne>Si>Fe(INTP)<br>
                 </p>
-                <a href="/Contact.html" class="btn btn-primary">Contact</a>
+                <a href="{{ url_for('contact') }}" class="btn btn-primary">Contact</a>
+            </div>
+        </div>
+        <div class="Container rounded bg-dark text-white pb-5"
+            style="font-family: 'Courier New', 'Courier', 'monospace'">
+            <div class="col-sm-8">
+                <h4>Links</h4>
+                <ul class="list-group">
+                    <p>I thought i may end this section with some links that I've found particularly helpful in
+                        referencing
+                        material.
+                    </p>
+                    <li class="list-group-item ">
+                        <a href="https://hackerthemes.com/bootstrap-cheatsheet/" class="">Bootstrap 4 Cheat Sheet</a>
+                    </li>
+                    <li class="list-group-item">
+                        <a href="https://github.com/daneden/animate.css/blob/master/README.md" class="">Animation
+                            Effects
+                            via
+                            CSS.</a></li>
+                    <li class="list-group-item">
+                        <a href="https://ehmatthes.github.io/pcc_2e/cheat_sheets/cheat_sheets/" class="">Python 3 Cheat
+                            Sheet<br><small>You'll need to find the PDF and download, it's worth having in your
+                                back pocket starting out.</small></a></li>
+                    <li class="list-group-item">
+                        <a href="https://s3.us-east-2.amazonaws.com/prettyprinted/flask_cheatsheet.pdf" class="">Flask
+                            Cheat Sheet <br><small>Courtesy of Pretty Printed</small></a></li>
+                    <li class="list-group-item">
+                        <a href="https://www.cheatography.com//amicheletti/cheat-sheets/python-flask/pdf/"
+                            class="">Flask
+                            Cheat Sheet <br><small>Courtesy of amicheletti</small></a></li>
+
+                </ul>
             </div>
         </div>
     </div>
+
 </div>
+
 <div>
 
 </div> {% endblock %}

@@ -5,25 +5,28 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="icon" type="image/jpg" href="static/css/DK Logo.jpg">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css">
     <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet" media="all">
+
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
         integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     {% block head %} {% endblock %}
     {% if title %}
-    <title> Sammie Kendrick Resume - {{ title }}</title>
+    <title> Dylan Kendrick Resume - {{ title }}</title>
     {% else %}
-    <title>Sammie Kendrick Resume</title>
+    <title>Dylan Kendrick Resume</title>
     {% endif %}
 </head>
 
-<body id="father" class="animated flash">
+<body id="father">
     <nav class="navbar navbar-expand-sm nav-col navbar-dark sticky-top">
 
         <div class="collapse navbar-collapse container" id="collapsibleNavbar">
             <div class="collapse navbar-collapse" id="navbarToggle">
                 <div class="navbar-nav mr-auto">
-                    <a class="nav-item nav-link" href="{{ url_for('home') }}">Home</a>
+                    <a class="nav-item nav-link hvr-grow" href="{{ url_for('home') }}">Home</a>
                     <a class="nav-item nav-link" href="{{ url_for('softeng') }}">Software Engineering</a>
                     <a class="nav-item nav-link" href="{{ url_for('music') }}">Music</a>
                     <a class="nav-item nav-link" href="{{ url_for('blog') }}">Blog</a>
@@ -38,11 +41,11 @@
     <div id="overlay" style="font-family: 'Courier New', 'Courier', 'monospace'" class="animated  fadeInDownBig ">
         <div class="jumbotron-fluid text-center"
             style="background-image: url(static/css/crazy.gif);background-size:100%; background-position: center; padding: 150px;">
-            <div class="mybody">
+            <div class="mybody animated heartBeat delay-1s">
                 <br>
                 <hr>
                 <br>
-                <h1>Sammie Kendrick</h1>
+                <h1>Dylan Kendrick</h1>
                 <p>Built with Flask, the Python framework. </p>
                 <br>
                 <hr>
@@ -50,7 +53,7 @@
             </div>
         </div>
     </div>
-    <div class="container animated fadeInUpBig" style="padding: 10px;">
+    <div class="container pt-5" style="padding: 10px;">
         {% with messages = get_flashed_messages(with_categories=True) %}
         {% if messages %}
         {% for category, message in messages %}
@@ -66,7 +69,8 @@
     <div class="myfooter mybody sticky-top">
         <footer>
             <div>
-                <p> // Neuro Design // Copyright 2020 //</p>
+                <p> // Neuro Design // Copyright 2020 // <a href="thedylankendrick@gmail.com"
+                        class="animated flash">Email Now</a> //</p>
             </div>
         </footer>
     </div>

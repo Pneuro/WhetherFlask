@@ -9,7 +9,7 @@ html, body {
     font-family: "Courier New", Courier, monospace;
 }
 
-#daddy {
+#father {
     font-family: "Lucida Console", "Lucida Sans Typewriter",
 }
 
@@ -25,12 +25,10 @@ html, body {
     background-color: #0D1317;
 }
 #overlay {
-    text-shadow: 1px 1px 1px black,
-             1px 1px 1px black;
+    text-shadow: 2px 2px 2px black,
+             2px 2px 2px black;
 }
-#overlaywhite {
 
-}
 #stranger {
     padding: 5px;
     

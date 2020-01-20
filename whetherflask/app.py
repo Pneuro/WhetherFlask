@@ -18,7 +18,7 @@ app = Flask(__name__)
 # db = cluster[""]
 # collection = db["data"]
 
-####################################### Secret Key ##########################################
+### Secret Key ##########################################
 app.config.update(
 
     # Set the secret key to a sufficiently random value
@@ -41,7 +41,7 @@ posts = [{
 ]
 
 
-######################################Navigation##################################################
+### Navigation #############################################
 
 
 @app.route('/')
@@ -80,7 +80,7 @@ def softeng():
 def music():
     return render_template('music.html', title='Music')
 
-###### Scraping Import ###########################################################################
+### Scraping Import ###########################################################################
 # UNIVERSAL AUDIO APOLLO TWIN X DUO THUNDERBOLT 3 INTERFACE
 
 
@@ -153,4 +153,4 @@ def contact():
 
 
 if __name__ == "__main__":
-    app.run()
+    app.run(debug=True)

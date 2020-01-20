@@ -41,7 +41,7 @@
     <div id="overlay" style="font-family: 'Courier New', 'Courier', 'monospace'" class="animated  fadeInDownBig ">
         <div class="jumbotron-fluid text-center"
             style="background-image: url(static/css/crazy.gif);background-size:100%; background-position: center; padding: 150px;">
-            <div class="mybody animated heartBeat delay-1s">
+            <div class="mybody ">
                 <br>
                 <hr>
                 <br>
@@ -53,7 +53,7 @@
             </div>
         </div>
     </div>
-    <div class="container pt-5" style="padding: 10px;">
+    <div class="container pt-5 animated heartBeat delay-1s" style="padding: 10px;">
         {% with messages = get_flashed_messages(with_categories=True) %}
         {% if messages %}
         {% for category, message in messages %}

@@ -1,59 +1,86 @@
 {% extends 'base.html' %}
 
-{% block head %}
-
-{% endblock %}
-
 {% block body %}
-<div class="container">
-    <div class="content-section">
-        <form method="POST" action="">
-            {{ form.hidden_tag() }}
-            <fieldset class="form-group">
-                <legend class="border-bottom mb-4">Log In</legend>
-                <div class="form-group">
-                    {{ form.email.label(class="form-control-label") }}
-                    {% if form.email.errors %}
-                    {{ form.email(class="form-control form-control-lg is-invalid") }}
-                    <div class="invalid-feedback">
-                        {% for error in form.email.errors %}
-                        <span>{{ error }}</span>
-                        {% endfor %}
-                    </div>
-                    {% else %}
-                    {{ form.email(class="form-control form-control-lg") }}
-                    {% endif %}
-                </div>
-                <div class="form-group">
-                    {{ form.password.label(class="form-control-label") }}
-                    {% if form.password.errors %}
-                    {{ form.password(class="form-control form-control-lg is-invalid") }}
-                    <div class="invalid-feedback">
-                        {% for error in form.password.errors %}
-                        <span>{{ error }}</span>
-                        {% endfor %}
-                    </div>
-                    {% else %}
-                    {{ form.password(class="form-control form-control-lg") }}
-                    {% endif %}
-                </div>
-                <div class="form-check">
-                    {{ form.remember(class="form-check-input") }}
-                    {{ form.remember.label(class="form-check-label") }}
-                </div>
-            </fieldset>
-            <div class="form-group">
-                {{ form.submit(class="btn btn-outline-info") }}
-            </div>
-            <small class="text-muted ml-2">
-                <a href="#">Forgot Password?</a>
-            </small>
-        </form>
-    </div>
-    <div class="border-top pt-3">
-        <small class="text-muted">
-            Need An Account? <a class="ml-2" href="{{ url_for('register') }}">Sign Up Now</a>
-        </small>
-    </div>
+<h1 id="burst" class="jumbotron bg-dark text-white">I stole this.</h1>
+<h1>INTP</h1>
+<h4><span class="s1"><strong>Top Ten Words That Describe Most INTPs:</strong></span></h4>
+<p style="text-align: center;">Private ... Logic-Driven ... Analytical ... Original ... Unconventional ... Skeptical ...
+    Disorganized ... Independent ... Internally-Motivated ... Witty</p>
+<p>&nbsp;</p>
+<h4><strong>DEPTH OVER BREADTH</strong></h4>
+<p><strong>Quiet</strong>, <strong>curious</strong>, and <strong>deep</strong>, INTPs tend to spend a great deal of
+    their day inside their own heads.&nbsp;They have one of the more highly developed &ldquo;inner worlds&rdquo; of any
+    of the types and this is where they do their best thinking.&nbsp;Often they are SO deeply in their own head, that
+    they miss things going on around them in the immediate external world. If a subject or problem has piqued their
+    interest, INTPs will devote countless hours to understanding the topic fully, and <strong>achieve remarkable
+        expertise</strong> (even at a very young age). Once they have mastered a skill or subject area, they often move
+    on to the next area of interest, preferring to keep their learning curve at the maximum slope possible, a few topics
+    at a time.</p>
+<p>&nbsp;&nbsp;&nbsp;</p>
+<h4><strong>COMPLEX PROBLEM SOLVERS, MASTERS OF SYSTEMS</strong></h4>
+<p>INTPs are the world&rsquo;s &ldquo;big picture&rdquo; problem solvers, especially problems that involve
+    systems.&nbsp;INTPs thrive most when they are working independently for long stretches of time to develop a solution
+    to a problem that is too complex and intellectually challenging for others to solve. Their specialty is designing
+    <strong>cutting edge systems</strong> that solve a current problem, but also handle unforeseen future challenges.
+    Characteristically <strong>independent</strong>, <strong>original thinkers</strong>, with <strong>unconventional
+        thought patterns</strong>, INTPs analyze problems very differently than other types and therefore are often the
+    creative genius behind breakthroughs in systems. For example, Albert Einstein, Charles Darwin, Bill Gates, George
+    Lucas, and J.R.R. Tolkien (all likely INTPs) created their own systems (Math, Science, Technology, Film, and
+    Literature, respectively). INTPs are often <strong>avid science fiction and fantasy readers/writers</strong>,
+    enjoying alternative worlds that stimulate their imagination and are much more logically systematized than ours,
+    where it is not uncommon for an INTP to feel out of place.</p>
+<p>&nbsp;&nbsp;&nbsp;</p>
+<h4><strong>SEEING SHADES OF GREY, ANALYSIS</strong></h4>
+<p>INTPs are <strong>natural skeptics</strong> and one of the types most likely to initially challenge the underlying
+    principles of personality type. Things are rarely black and white for them, as they see all of the nuances or shades
+    of grey in an issue. INTPs err on the side of over-analyzing a topic, considering all of the challenges that may
+    arise way into the future. INTPs <strong>occasionally overreact</strong> with an emotional tone (much to their
+    chagrin) if they are frustrated by the inconsistent logic of another&rsquo;s position, or if their competence is
+    questioned.</p>
+<p>&nbsp;&nbsp;</p>
+<h4><strong>LOGIC-DRIVEN, HIGHLY ANALYTICAL</strong></h4>
+<p>INTPs are convinced only by <strong>logic</strong>. INTPs are a little obsessed with logical correctness. &nbsp;INTPs
+    virtually never base a decision on subjective emotional considerations. In fact, they are <strong>not always in tune
+        with their own or others&rsquo; emotional states or needs</strong>.&nbsp;This can occasionally get them into
+    trouble, if they poke holes in others&rsquo; theories or bluntly point out logical inconsistencies in their
+    position.</p>
+<p>&nbsp;&nbsp;</p>
+<h4><strong>BURSTS OF INSPIRATION</strong></h4>
+<p>INTPs tend to work in <strong>bursts of inspiration</strong> when they are fully engaged &ndash; but tasks they find
+    boring can be a real challenge. INTPs often <strong>struggle with staying organized</strong>. They are most inspired
+    at the beginning of a new project during the <strong>strategy</strong>, <strong>vision setting</strong>, and
+    <strong>problem solving</strong> stages. Once the plan has been worked out, they&rsquo;d love nothing more than to
+    pass it off and move on to the next complex problem.</p>
+<p>&nbsp;&nbsp;</p>
+<h4><strong>Top ten: INTPs are the type MOST likely to . . .</strong>&nbsp;</h4>
+<p class="p2">1. Be highly imaginative, even as adults</p>
+<p class="p2">2. Be technologically savvy</p>
+<p class="p2">3. Gravitate towards cutting edge approaches (especially technology)</p>
+<p class="p2">4. Highly value intelligence in friendships</p>
+<p class="p2">5. Challenge the status quo</p>
+<p class="p2">6. Provide maximum autonomy as a boss</p>
+<p class="p2">7. Prefer that their work speak for itself (and avoid self promoting)</p>
+<p class="p2">8. NOT be seen as a someone who &ldquo;aims to please others&rdquo;</p>
+<p class="p2">9. Be a serial hobbyist</p>
+<p class="p2">10. Be seen as independent (in every way)</p>
+<p class="p1">&nbsp;</p>
+<p>Take the TypeCoach Verifier, an interactive 20 minute video based tutorial coaching you through the process of
+    discovering your true "best fit" type. Click&nbsp;<a href="https://www.type-coach.com/verifier">here</a>&nbsp;to
+    learn more.</p>
+<p>What are the top 5 ways to maximize your career potential given your type? &nbsp;Purchase&nbsp;<a
+        href="https://www.type-coach.com/coaching">access</a>&nbsp;to the 5 Coaching Videos for YOUR type.<a
+        style="color: #1155cc;" href="https://www.type-coach.com/coaching" target="_blank"><br /></a></p>
+<p>Want to know how to communicate with any individual based on the unique combo of YOUR type and THEIR type?
+    &nbsp;Purchase Type-to-Type. &nbsp;It offers top ten tips for every combination of types in&nbsp;<a
+        href="https://www.type-coach.com/type-to-type">an interactive type chart</a>.&nbsp;</p>
+<p class="p1">&nbsp;</p>
+</div>
+</div>
+<div class='text spacer'></div>
+</div>
+</div>
+
+</div>
+</div> <!-- /.container-->
 </div>
 {% endblock %}

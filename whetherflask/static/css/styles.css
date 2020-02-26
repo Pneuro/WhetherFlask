@@ -1,18 +1,20 @@
 html, body {
     background-color: #0D1317;
+    
 }
 .mybody {
     text-align: center;
     border: #0D1317;
     border-radius: 0ch;
     color: rgb(255, 255, 255);
-    font-family: "Courier New", Courier, monospace;
+
 }
 
-#father {
-    font-family: "Lucida Console", "Lucida Sans Typewriter",
-}
 
+#burst {
+    -webkit-transform: rotate(12deg);
+    -webkit-animation: infinite;
+}
 
 .nav-col {
     background-color: #0D1317;
@@ -20,6 +22,7 @@ html, body {
 
 #myimage {
     height: auto;
+  
 }
 .scheme {
     background-color: #0D1317;
@@ -27,6 +30,8 @@ html, body {
 #overlay {
     text-shadow: 2px 2px 2px black,
              2px 2px 2px black;
+
+
 }
 
 #stranger {
@@ -34,12 +39,12 @@ html, body {
     
 }
 .myfooter {
-    margin-top: 100px;
-    padding-top: 2em;
-    padding-bottom: 2em;
-    bottom: 0;
-    width: 100%;
-    height: 50px;
+
+    padding-top: 1em;
+    padding-bottom: 1em;
+    bottom: 0em;
+
+
     text-align: center;
     color: white;
     background-color: #0D1317;

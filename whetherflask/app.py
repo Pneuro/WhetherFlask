@@ -1,22 +1,23 @@
-from flask import Flask, render_template, url_for, flash, redirect
+from flask import Flask, render_template, url_for, flash, redirect, request, flash
 from flask_sqlalchemy import SQLAlchemy
 from datetime import datetime
-from forms import RegistrationForm, LoginForm
-import pymongo
-from pymongo import MongoClient
+from forms import ContactForm
 import os
 import sys
 import time
 from urllib.request import Request, urlopen
 from bs4 import BeautifulSoup as soup
-from selenium import webdriver
 
 
 app = Flask(__name__)
-# cluster = MongoClient(
-#     'mongodb+srv://pneuro:--@koncept-database-etudy.gcp.mongodb.net/test')
-# db = cluster[""]
-# collection = db["data"]
+db = SQLAlchemy(app)
+
+app.config["MAIL_SERVER"] = "smtp.gmail.com"
+app.config["MAIL_PORT"] = 465
+app.config["MAIL_USE_SSL"] = True
+app.config["MAIL_USERNAME"] = 'koncept999@gmail.com'
+app.config["MAIL_PASSWORD"] = '00iiccuu881122'
+
 
 ### Secret Key ##########################################
 app.config.update(
@@ -36,7 +37,16 @@ app.config.update(
 )
 test = ['dancing', 'purple', 'guitar']
 posts = [{
-    "_id": 0, 'title': 'post_1', 'author': 'Sammie Kendrick', 'email': 'thedylankendrick@gmail.com',
+    "_id": 0,
+    'title': 'Pondering',
+    'author': 'Sammie Kendrick',
+    'entry': "For matters of existance, wouldn't we all benefit from finding a way to do what we love in such a fashion that would make us thrive? As a thinker, perhaps there should be more consideration in my life involving solving complex problems.",
+}, {
+    "_id": 1,
+    'title': 'Secrets',
+    'author': 'Sammie Kendrick',
+    'entry': "The idea that if we focus on the thoughts of the life we wish we had, perhaps the thingkers in the world may come up with a solution as to procure such a life, but most motherfuckers are dumb as shit and kind of just wish wish wish. but that doesnt really work now dies it>? ",
+
 }
 ]
 
@@ -47,7 +57,8 @@ posts = [{
 @app.route('/')
 @app.route('/home')
 def home():
-    return render_template('about.html', )
+
+    return render_template('about.html')
 
 
 # @app.route('/register', methods=['GET', 'POST'])
@@ -59,16 +70,9 @@ def home():
 #     return render_template('register.html', title='Register', form=form)
 
 
-# @app.route('/login')
-# def login():
-#     form = LoginForm()
-#     if form.validate_on_submit():
-#         if form.email.data == 'admin@blog.com' and form.password.data == 'password':
-#             flash('You have been logged in!', 'success')
-#             return redirect(url_for('about'))
-#         else:
-#             flash('Login Unsuccessful. Please check username and password', 'danger')
-#     return render_template('login.html', title='Login', form=form)
+@app.route('/intps')
+def login():
+    return render_template('login.html', title='INTP')
 
 
 @app.route('/softeng')
@@ -76,80 +80,13 @@ def softeng():
     return render_template('softeng.html', title='Software Engineering')
 
 
-@app.route('/Music')
-def music():
-    return render_template('music.html', title='Music')
-
-### Scraping Import ###########################################################################
-# UNIVERSAL AUDIO APOLLO TWIN X DUO THUNDERBOLT 3 INTERFACE
-
-
-url = 'https://www.musiciansfriend.com/pro-audio/universal-audio-apollo-twin-x-duo-thunderbolt-3-audio-interface/l69012000000000?rNtt=apollo&index=1'
-req = Request(url, headers={'User-Agent': 'Mozilla/5.0'})
-webpage = urlopen(req).read()
-page_soup = soup(webpage, "html.parser")
-title = page_soup.find('title')
-containers = page_soup.find('span', 'price-wrap')
-clean = containers.text.strip()
-cleanTitle = title.text.strip()
-displayRes = 'The ' + cleanTitle + ' is going currently ' + str(clean)
-apollo = ('The ' + cleanTitle + ' is going to cost ' + str(clean))
-
-# MARSHALL JVM SERIES JVM410H 100W TUBE GUITAR AMPLIFIER
-
-
-urlAmp = 'https://www.musiciansfriend.com/amplifiers-effects/marshall-jvm-series-jvm410h-100w-tube-guitar-amp-head'
-reqAmp = Request(urlAmp, headers={'User-Agent': 'Mozilla/5.0'})
-webpageAmp = urlopen(reqAmp).read()
-page_soup_Amp = soup(webpageAmp, "html.parser")
-titleAmp = page_soup_Amp.find('title')
-containersAmp = page_soup_Amp.find('span', 'price-wrap')
-cleanAmp = containersAmp.text.strip()
-cleanTitleAmp = titleAmp.text.strip()
-displayResAmp = 'The ' + cleanTitleAmp + \
-    ' is going to cost ' + str(cleanAmp)
-amp = ('The ' + cleanTitleAmp + ' will cost ' + cleanAmp)
-
-# Apple Watch
-
-urlWatch = 'https://www.amazon.com/Apple-Watch-GPS-40mm-Aluminum/dp/B07XR5TRSZ/ref=sr_1_2_sspa?keywords=apple+watch&qid=1578007379&sr=8-2-spons&psc=1&spLa=ZW5jcnlwdGVkUXVhbGlmaWVyPUEzQ0FGVjRKQzY1TDBTJmVuY3J5cHRlZElkPUEwOTU0ODg4M0lBT1ZFVkZMSlQ1MyZlbmNyeXB0ZWRBZElkPUEwMDg1NjAwMU5aSVFQNEtORTc0MSZ3aWRnZXROYW1lPXNwX2F0ZiZhY3Rpb249Y2xpY2tSZWRpcmVjdCZkb05vdExvZ0NsaWNrPXRydWU='
-reqWatch = Request(urlWatch, headers={'User-Agent': 'Mozilla/5.0'})
-webpageWatch = urlopen(reqWatch).read()
-page_soup_Watch = soup(webpageWatch, "html.parser")
-titleWatch = page_soup_Watch.find('title')
-containersWatch = page_soup_Watch.find(
-    'span', 'priceBlockBuyingPriceString')
-cleanWatch = containersWatch.text.strip()
-cleanTitleWatch = titleWatch.text.strip()
-displayResWatch = 'The ' + cleanTitleWatch + \
-    ' is going to cost ' + str(cleanWatch)
-watch = ('The ' + cleanTitleWatch + ' in question will cost ' + cleanWatch)
-
-# Blog Attempt
-
-urlWatch = 'https://planetpython.org/'
-reqWatch = Request(urlWatch, headers={'User-Agent': 'Mozilla/5.0'})
-webpageWatch = urlopen(reqWatch).read()
-page_soup_Watch = soup(webpageWatch, "html.parser")
-titleWatch = page_soup_Watch.find('title')
-containersWatch = page_soup_Watch.find_all('h3', 'post')
-containersWatch = page_soup_Watch.find('h4', '')
-cleanWatch = containersWatch.text.strip()
-cleanTitleWatch = titleWatch.text.strip()
-displayResWatch = 'The ' + cleanTitleWatch + \
-    ' is going to cost ' + str(cleanWatch)
-blog = (cleanTitleWatch, cleanWatch)
-results = [apollo, amp, watch, blog]
-
-
-@app.route('/blog')
-def blog(): return render_template(
-    'blog.html', title='Blog', results=results, posts=posts)
-
-
-@app.route('/Contact')
+@app.route('/contact', methods=["POST", "GET"])
 def contact():
-    return render_template('contact.html', title='Contact')
+    form = ContactForm()
+    if form.validate_on_submit():
+        res = form.data
+        print(res)
+    return render_template('contact.html', form=form)
 
 
 if __name__ == "__main__":

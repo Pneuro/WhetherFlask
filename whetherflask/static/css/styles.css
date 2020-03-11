@@ -1,5 +1,5 @@
 html, body {
-    background-color: #0D1317;
+    background-color: #2F4858;
     
 }
 .mybody {
@@ -11,19 +11,40 @@ html, body {
 }
 
 
+
 #burst {
-    -webkit-transform: rotate(12deg);
+    -webkit-transform: rotate(60deg);
     -webkit-animation: infinite;
 }
 
 .nav-col {
-    background-color: #0D1317;
+    background-color: #2F4858;
+    color: white;
+
 }
+#my-name {
+    color: #F6AE2D;
+}
+
+#navbar-mine a{
+    color: #F6AE2D;
+}
+
+#navbar-mine a:hover {
+    color: white;
+}
+
+
 
 #myimage {
     height: auto;
-  
+    background: no-repeat
 }
+
+#content-wrapper {
+    background-color: #33658A;
+}
+
 .scheme {
     background-color: #0D1317;
 }
@@ -43,10 +64,8 @@ html, body {
     padding-top: 1em;
     padding-bottom: 1em;
     bottom: 0em;
-
-
     text-align: center;
-    color: white;
-    background-color: #0D1317;
+    color: #F6AE2D;
+    background-color: #2F4858;
     text-shadow: black;
 }

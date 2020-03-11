@@ -24,33 +24,34 @@
 
 <body id="father">
 
-    <nav class="navbar navbar-expand-sm nav-col navbar-dark sticky-top">
+    <nav class="navbar navbar-expand-sm nav-col sticky-top">
 
         <div class="collapse navbar-collapse container" id="collapsibleNavbar">
-            <div class="collapse navbar-collapse" id="navbarToggle">
-                <div class="navbar-nav mr-auto">
-                    <a class="nav-item nav-link" href="{{ url_for('home') }}">Resume</a>
-                    <a class="nav-item nav-link" href="{{ url_for('softeng') }}">Software Engineering</a>
-                    <a class="nav-item nav-link" href="{{ url_for('login') }}">INTP</a>
-                    <a class="nav-item nav-link animated flash" href="{{ url_for('contact') }}">Contact</a>
-                </div>
+
+            <div id="navbar-mine" class="navbar-nav mr-auto">
+                <a class="nav-item nav-link" href="{{ url_for('home') }}">Resume</a>
+                <a class="nav-item nav-link" href="{{ url_for('softeng') }}">Software
+                    Engineering</a>
+                <a class="nav-item nav-link" href="{{ url_for('login') }}">INTP</a>
+                <a class="nav-item nav-link animated flash" href="{{ url_for('contact') }}">Contact</a>
             </div>
+        </div>
 
     </nav>
-    <div id="overlay" style="font-family: cursive;"">
-        <div id=" bgimg" class=" jumbotron-fluid text-center"
-        style="background-image: url(static/css/cover_image.png);background-size:100%; background-position: center; padding: 150px;">
-        <div class="mybody ">
-            <br>
-            <hr>
-            <br>
-            <h1>Dylan Kendrick</h1>
-            <h4>Built with Flask Project. </h4>
-            <br>
-            <hr>
-            <br>
+    <div id="overlay" style="font-family: cursive;">
+        <div id=" bgimg" class=" jumbotron text-center"
+            style="background-image: url(static/css/cover_image.png);background-size:100%; background-position: center; padding: 150px;">
+            <div class="mybody" id="my-name">
+                <br>
+                <hr>
+                <br>
+                <h1>Dylan Kendrick</h1>
+                <h4 id="header-subtitle">Built with Flask Project. </h4>
+                <br>
+                <hr>
+                <br>
+            </div>
         </div>
-    </div>
     </div>
     <div class="container pt-5" style="padding: 10px;">
         {% with messages = get_flashed_messages(with_categories=True) %}
@@ -68,8 +69,7 @@
     <div class="myfooter mybody sticky-top">
         <footer>
             <div>
-                <p> // Neuro Design // Copyright 2020 // <a href="thedylankendrick@gmail.com"
-                        class="animated flash">Email Now</a> //</p>
+                <p> // Neuro Design // Copyright 2020 //</p>
             </div>
         </footer>
     </div>

@@ -7,16 +7,19 @@ import sys
 import time
 from urllib.request import Request, urlopen
 from bs4 import BeautifulSoup as soup
-
+import smtplib
+from secrets import password
+import weather
 
 app = Flask(__name__)
 db = SQLAlchemy(app)
+
 
 app.config["MAIL_SERVER"] = "smtp.gmail.com"
 app.config["MAIL_PORT"] = 465
 app.config["MAIL_USE_SSL"] = True
 app.config["MAIL_USERNAME"] = 'koncept999@gmail.com'
-app.config["MAIL_PASSWORD"] = '00iiccuu881122'
+app.config["MAIL_PASSWORD"] = '/'
 
 
 ### Secret Key ##########################################
@@ -35,20 +38,19 @@ app.config.update(
     WTF_CSRF_TIME_LIMIT=None
 
 )
-test = ['dancing', 'purple', 'guitar']
-posts = [{
-    "_id": 0,
-    'title': 'Pondering',
-    'author': 'Sammie Kendrick',
-    'entry': "For matters of existance, wouldn't we all benefit from finding a way to do what we love in such a fashion that would make us thrive? As a thinker, perhaps there should be more consideration in my life involving solving complex problems.",
-}, {
-    "_id": 1,
-    'title': 'Secrets',
-    'author': 'Sammie Kendrick',
-    'entry': "The idea that if we focus on the thoughts of the life we wish we had, perhaps the thingkers in the world may come up with a solution as to procure such a life, but most motherfuckers are dumb as shit and kind of just wish wish wish. but that doesnt really work now dies it>? ",
 
-}
-]
+
+def sendemails():
+    conn = smtplib.SMTP('smtp.gmail.com', 587)
+    conn.ehlo()
+    conn.starttls()
+    conn.login('koncept999@gmail.com', password)
+    conn.sendmail('koncept999@gmail.com',
+                  'thedylankendrick@gmail.com', f'')
+    conn.quit()
+
+
+weather_display = weather.datacoll
 
 
 ### Navigation #############################################
@@ -58,7 +60,7 @@ posts = [{
 @app.route('/home')
 def home():
 
-    return render_template('about.html')
+    return render_template('about.html', name="About", weather_display=weather_display)
 
 
 # @app.route('/register', methods=['GET', 'POST'])
@@ -83,9 +85,17 @@ def softeng():
 @app.route('/contact', methods=["POST", "GET"])
 def contact():
     form = ContactForm()
-    if form.validate_on_submit():
-        res = form.data
-        print(res)
+    if request.method == "POST":
+
+        conn = smtplib.SMTP('smtp.gmail.com', 587)
+        conn.ehlo()
+        conn.starttls()
+        conn.login('koncept999@gmail.com', password)
+        conn.sendmail('koncept999@gmail.com',
+                      'thedylankendrick@gmail.com', f'Data sent from FLASK - \nName: {form.name.data} \nEmail: {form.email.data}\nBody: {form.body.data}\nEmployer?: {form.employer.data}')
+        conn.quit()
+        return render_template('thanks.html')
+
     return render_template('contact.html', form=form)
 
 

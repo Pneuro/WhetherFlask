@@ -8,23 +8,48 @@
 
 <div class="container animated fadeInLeftBig">
     <div class="row">
-        <div class="col-sm-8 ">
+        <div class="col-md-12 ">
             <h2 class=""></h2>
-            <br>
+
             <hr>
             <hr>
-            <br>
-            <h4>Projects in Software</h4>
+
+            <h3 style="text-align: center;">Projects in Software</h3>
             <hr>
             <hr>
-            <h5>Weather App</h5>
-            <a href="https://github.com/Pneuro/Web-Scraper-items/blob/master/venv/scraper.py">Github Link</a>
+            <h3 class="list-group" style="text-align: center;">Python Developer<br></h3>
+            <h4 style="text-align: center;">Weather App <a
+                    href="https://github.com/Pneuro/Web-Scraper-items/blob/master/venv/scraper.py"><img
+                        style="width: 20px;" src="../static/css/github_tiny.png" alt=""></a>
+
+            </h4>
+
             <p>
 
-                <h6 class="list-group">Python Developer<br></h6>
-                <li class="list-group-item">November 2019 - Current<br></li>
-                <li class="list-group-item">Simple weather app<br></li>
-                <li class="list-group-item">Tasks<br></li>
+
+                <h5 class="list-group-item" style="text-align: center;">November 2019 - Current</h5><br>
+                <div id="weather-display">
+                    <h5 style="background-color: #2F4858;
+                    color: #F6AE2D; text-align: center;" class="list-group-item">Simple weather app</h5><br>
+                    <li style="background-color: #2F4858;
+                    color: #F6AE2D;" class="list-group-item">The current weather is {{ weather_display.summary }}</li>
+                    <li style="background-color: #2F4858;
+                    color: #F6AE2D;" class="list-group-item">The current temperature is
+                        {{ weather_display.temperature }}</li>
+                    <li style="background-color: #2F4858;
+                    color: #F6AE2D;" class="list-group-item">The current humidity is {{ weather_display.humidity }}
+                    </li>
+                    <li style="background-color: #2F4858;
+                    color: #F6AE2D;" class="list-group-item">The current air quality indicator reads
+                        {{ weather_display.OzoneAQI }}
+                    </li>
+                    <li style="background-color: #2F4858;
+                    color: #F6AE2D;" class="list-group-item">The current weather feels like {{ weather_display.feels }}
+                    </li>
+                    <li style="background-color: #2F4858;
+                    color: #F6AE2D;" class="list-group-item">The current time is {{ weather_display.Time }}</li>
+                </div>
+                <br>
                 <li class="list-group-item">Login verification(single user)<br></li>
                 <li class="list-group-item">Reach out to dark sky API<br></li>
                 <li class="list-group-item">Narrow down data from bson(requests)<br></li>
